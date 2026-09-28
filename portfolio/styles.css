@@ -250,8 +250,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem)
   z-index: 1;
 }
 
-.project-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.project-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1 1 auto; }
 .project-body h3 { margin: 0; font-size: 1.25rem; }
+/* Let the description absorb extra height so the tags + links footer aligns
+   across cards regardless of how long each description is. */
+.project-body .prose { flex: 1 1 auto; }
 
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; }
 .tags-lg { gap: 0.5rem; }
@@ -321,3 +324,84 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem)
 @media (max-width: 600px) {
   .nav { display: none; }
 }
+
+/* ===== Splash (first-visit intro) ===== */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: var(--bg);
+  /* Dissolve out at the end of the sequence, then remove from the flow. */
+  animation: splash-out 0.6s ease 1.9s forwards;
+}
+.splash.is-done { display: none; }
+/* Set by an inline head script on repeat visits / reduced motion, before paint. */
+.splash-skip .splash { display: none; }
+.splash-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  color: var(--accent);
+}
+.splash-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+.splash-ring circle {
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  animation: splash-draw 1.1s ease 0.15s forwards;
+}
+.splash-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.6);
+  animation: splash-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+.splash-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: splash-fade-up 0.6s ease 0.9s forwards;
+}
+
+@keyframes splash-draw { to { stroke-dashoffset: 0; } }
+@keyframes splash-pop {
+  0%   { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes splash-fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes splash-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Respect user preference: no motion, no splash. */
+@media (prefers-reduced-motion: reduce) {
+  .splash { display: none; }
+}
+

@@ -1,5 +1,27 @@
 // ===== Portfolio interactivity: theme toggle, language toggle, footer year =====
 
+// --- Splash intro (once per browser session; skipped for reduced motion) ---
+(function initSplash() {
+  const splash = document.getElementById('splash');
+  if (!splash) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const seen = sessionStorage.getItem('portfolio-splash-seen');
+
+  if (prefersReduced || seen) {
+    splash.classList.add('is-done');
+    return;
+  }
+
+  sessionStorage.setItem('portfolio-splash-seen', '1');
+  // Remove from the layout once the dissolve finishes so it can't trap focus.
+  splash.addEventListener('animationend', (e) => {
+    if (e.animationName === 'splash-out') splash.classList.add('is-done');
+  });
+  // Safety net in case the animationend event is missed.
+  setTimeout(() => splash.classList.add('is-done'), 3000);
+})();
+
 // --- Footer year ---
 document.getElementById('year').textContent = new Date().getFullYear();
 
