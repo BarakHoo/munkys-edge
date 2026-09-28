@@ -1,0 +1,92 @@
+# munkys.dev edge stack — owns the domain, TLS, routing, and the portfolio.
+#
+# This stack is INDEPENDENT of any application. Apps (FYURI + side-projects)
+# run their own stacks and join the shared external network "web".
+#
+# ── One-time setup on the server ────────────────────────────────────────────
+#   docker network create web
+#
+# ── Expected sibling folder layout on the server ────────────────────────────
+#   ~/apps/munkys-edge               (this repo)
+#   ~/apps/FYURI                     (runs its own docker-compose.yml)
+#   ~/apps/calc3d-print-calculator
+#   ~/apps/face-detection
+#   ~/apps/location-reminders
+#   ~/apps/shopping-list
+#   ~/apps/face-mesh-explorer
+#
+# ── Bring up (order) ────────────────────────────────────────────────────────
+#   1) cd ~/apps/FYURI        && docker compose up -d --build
+#   2) cd ~/apps/munkys-edge  && docker compose up -d --build
+#
+# Caddy reaches FYURI via the network alias "fyuri-frontend" (set in FYURI's
+# compose) and each side-project via its service name below.
+
+services:
+  # Reverse proxy + automatic HTTPS + static portfolio host
+  caddy:
+    image: caddy:latest
+    container_name: munkys_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./portfolio:/srv/portfolio:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+  # ── Static side-projects (built from sibling repo folders) ────────────────
+  calc3d:
+    build:
+      context: ../calc3d-print-calculator
+    container_name: proj_calc3d
+    restart: unless-stopped
+    networks:
+      - web
+
+  face:
+    build:
+      context: ../face-detection
+    container_name: proj_face
+    restart: unless-stopped
+    networks:
+      - web
+
+  gps-reminder:
+    build:
+      context: ../location-reminders
+    container_name: proj_gps_reminder
+    restart: unless-stopped
+    networks:
+      - web
+
+  shopping-list:
+    build:
+      context: ../shopping-list
+    container_name: proj_shopping_list
+    restart: unless-stopped
+    networks:
+      - web
+
+  face-mesh:
+    build:
+      context: ../face-mesh-explorer
+    container_name: proj_face_mesh
+    restart: unless-stopped
+    networks:
+      - web
+
+# Shared network created once outside any stack:  docker network create web
+networks:
+  web:
+    external: true
+
+volumes:
+  caddy_data:
+    driver: local
+  caddy_config:
+    driver: local

@@ -1,0 +1,67 @@
+# munkys.dev edge — Caddy reverse proxy with automatic HTTPS
+#
+# This is the SINGLE owner of the munkys.dev domain. It lives in the
+# munkys-edge repo and is INDEPENDENT of any individual application.
+#
+# All apps (FYURI + the static side-projects) run as their own containers and
+# join the shared external Docker network named "web" (created once with
+# `docker network create web`). Caddy reaches each app by its container name.
+#
+# Point A/AAAA DNS records for munkys.dev (and www) at this server's public IP.
+# Caddy will automatically obtain and renew Let's Encrypt TLS certificates.
+#
+# For local testing without a domain, replace the site address with ":80".
+
+munkys.dev, www.munkys.dev {
+	encode gzip zstd
+
+	# --- FYURI showcase under /fyuri ---
+	# handle_path strips the /fyuri prefix before forwarding, so the FYURI
+	# frontend Nginx container (which serves the SPA at root and proxies /api/
+	# and /images/ to the backend) works unchanged. The FYURI frontend joins the
+	# shared "web" network with the alias "fyuri-frontend".
+	handle_path /fyuri/* {
+		reverse_proxy fyuri-frontend:80
+	}
+	redir /fyuri /fyuri/ 308
+
+	# --- Static side-projects (each is its own repo + Nginx container) ---
+	# handle_path strips the subpath prefix, so each project's Nginx serves at
+	# root. The projects use relative asset paths, so they work under any prefix.
+	handle_path /calc3d/* {
+		reverse_proxy calc3d:80
+	}
+	redir /calc3d /calc3d/ 308
+
+	handle_path /face/* {
+		reverse_proxy face:80
+	}
+	redir /face /face/ 308
+
+	handle_path /gps-reminder/* {
+		reverse_proxy gps-reminder:80
+	}
+	redir /gps-reminder /gps-reminder/ 308
+
+	handle_path /shopping-list/* {
+		reverse_proxy shopping-list:80
+	}
+	redir /shopping-list /shopping-list/ 308
+
+	handle_path /face-mesh/* {
+		reverse_proxy face-mesh:80
+	}
+	redir /face-mesh /face-mesh/ 308
+
+	# --- Root: the personal portfolio / intro site ---
+	# Served as static files from the folder mounted into this Caddy container
+	# at /srv/portfolio (see docker-compose.yml).
+	handle {
+		root * /srv/portfolio
+		try_files {path} /index.html
+		file_server
+	}
+
+	# Optional: send your email to Let's Encrypt for expiry notices.
+	# tls you@example.com
+}
