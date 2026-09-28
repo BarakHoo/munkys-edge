@@ -39,7 +39,7 @@ const translations = {
     'hero.ctaCv': 'Download CV',
     'about.title': 'About',
     'about.body':
-      "I'm a full stack developer with a strong background in client care, service, and sales. After years of maximizing sales opportunities and solving problems for customers, I trained as a Full Stack Java developer and now build web applications end to end. Alongside my own projects, I do freelance development for businesses — FYURI is a prime example.",
+      "I'm a full stack developer with a strong background in client care, service, and sales. After years of maximizing sales opportunities and solving problems for customers, I trained as a Full Stack Java developer and now build web applications end to end — from my own projects to freelance work for businesses.",
     'about.skillsTitle': 'Skills & technologies',
     'projects.title': 'Projects',
     'projects.fyuri.desc':
@@ -59,7 +59,7 @@ const translations = {
     'experience.freelance.role': 'Freelance Full Stack Developer',
     'experience.freelance.meta': 'Self-employed · Herzliya',
     'experience.freelance.desc':
-      'I build and deliver web applications for businesses — designing the database and API, implementing the front-end, and deploying to production. FYURI is a prime example: a full e-commerce and custom-build platform I built end to end.',
+      'I build and deliver web applications for businesses — designing the database and API, implementing the front-end, and deploying to production. My work ranges from full e-commerce and custom-build platforms to smaller focused tools, each built end to end.',
     'experience.wmo.role': 'Retention Manager',
     'experience.wmo.meta': 'WMO Marketing LTD, Herzliya · Jan 2022 – Present',
     'experience.wmo.desc':
@@ -85,14 +85,14 @@ const translations = {
     'nav.cv': 'קורות חיים',
     'nav.contact': 'צור קשר',
     'hero.eyebrow': 'מפתח פול-סטאק',
-    'hero.title': 'היי, אני ברק חובש.',
+    'hero.title': 'היי, אני ברק הובש.',
     'hero.lead':
-      'מפתח פול-סטאק מהרצליה. אני בונה אפליקציות ווב שלמות מקצה לקצה — מתכנון בסיס נתונים ו-API ועד ממשקי משתמש מלוטשים ורספונסיביים — וכן לוקח עבודות פרילנס לעסקים.',
+      'מפתח פוּל-סטאק מהרצליה. אני בונה אפליקציות ווב שלמות מהתחלה ועד הסוף — מתכנון בסיס הנתונים וה-API ועד ממשקים נקיים ומותאמים לכל מסך — וגם לוקח פרויקטים לעסקים.',
     'hero.ctaProjects': 'לצפייה בעבודות שלי',
     'hero.ctaCv': 'הורדת קורות חיים',
     'about.title': 'אודות',
     'about.body':
-      'אני מפתח פול-סטאק עם רקע חזק בשירות לקוחות ומכירות. לאחר שנים של מקסום הזדמנויות מכירה ופתרון בעיות עבור לקוחות, הוכשרתי כמפתח Full Stack Java וכיום אני בונה אפליקציות ווב מקצה לקצה. לצד הפרויקטים שלי, אני מבצע עבודות פיתוח פרילנס לעסקים — FYURI היא דוגמה מובהקת.',
+      'אני מפתח פוּל-סטאק עם רקע חזק בשירות לקוחות ומכירות. אחרי שנים של איתור הזדמנויות מכירה ופתרון בעיות ללקוחות, הוכשרתי כמפתח Full Stack Java והיום אני בונה אפליקציות ווב מהתחלה ועד הסוף — גם פרויקטים משלי וגם עבודות לעסקים.',
     'about.skillsTitle': 'כישורים וטכנולוגיות',
     'projects.title': 'פרויקטים',
     'projects.fyuri.desc':
@@ -112,7 +112,7 @@ const translations = {
     'experience.freelance.role': 'מפתח פול-סטאק עצמאי (פרילנס)',
     'experience.freelance.meta': 'עצמאי · הרצליה',
     'experience.freelance.desc':
-      'אני בונה ומספק אפליקציות ווב לעסקים — תכנון בסיס הנתונים וה-API, מימוש הפרונט-אנד, והעלאה לפרודקשן. FYURI היא דוגמה מובהקת: פלטפורמת מסחר ובנייה מותאמת אישית שבניתי מקצה לקצה.',
+      'אני בונה ומספק אפליקציות ווב לעסקים — תכנון בסיס הנתונים וה-API, בניית הצד הקדמי והעלאה לאוויר. העבודות נעות בין פלטפורמות מסחר ובנייה מותאמת אישית ועד כלים קטנים וממוקדים, כשכל אחד נבנה מהתחלה ועד הסוף.',
     'experience.wmo.role': 'מנהל שימור לקוחות',
     'experience.wmo.meta': 'WMO Marketing LTD, הרצליה · ינואר 2022 – היום',
     'experience.wmo.desc':
