@@ -53,6 +53,22 @@ munkys.dev, www.munkys.dev {
 	}
 	redir /face-mesh /face-mesh/ 308
 
+	# --- Full-stack apps (each runs its own docker-compose stack) ---
+	# These frontends join the shared "web" network via their compose files with
+	# the aliases "coupon-frontend" and "crm-frontend". handle_path strips the
+	# subpath prefix, so each app's Nginx serves the SPA at root and proxies its
+	# own /api/ to its backend. The SPAs are built with the matching base path
+	# (/coupon, /crm) and API base (/coupon/api, /crm/api).
+	handle_path /coupon/* {
+		reverse_proxy coupon-frontend:80
+	}
+	redir /coupon /coupon/ 308
+
+	handle_path /crm/* {
+		reverse_proxy crm-frontend:80
+	}
+	redir /crm /crm/ 308
+
 	# --- Root: the personal portfolio / intro site ---
 	# Served as static files from the folder mounted into this Caddy container
 	# at /srv/portfolio (see docker-compose.yml).
