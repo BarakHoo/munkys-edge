@@ -227,6 +227,29 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem)
 }
 .project-thumb.thumb-empty .thumb-fallback { display: block; }
 
+/* Theme-aware monochrome SVG illustrations for project cards */
+.project-thumb.thumb-svg {
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-elev));
+}
+.project-thumb.thumb-svg .thumb-icon {
+  color: var(--accent);
+  width: 40%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-thumb.thumb-svg .thumb-icon svg {
+  width: 100%;
+  height: 100%;
+}
+/* FYURI: the screenshot (if present) sits on top of the SVG fallback */
+.project-thumb.thumb-svg img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .project-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .project-body h3 { margin: 0; font-size: 1.25rem; }
 

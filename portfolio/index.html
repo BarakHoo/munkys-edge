@@ -105,10 +105,20 @@
         <!-- FYURI — the flagship project, linked to the live app under /fyuri -->
         <article class="project-card">
           <!-- PLACEHOLDER: drop a screenshot at portfolio/assets/fyuri-cover.jpg -->
-          <div class="project-thumb">
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- Night-vision goggles -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 26c0-4 3-6 8-6h32c5 0 8 2 8 6v6c0 6-5 10-11 10h-4c-3 0-5-1-6-4l-2-4h-4l-2 4c-1 3-3 4-6 4h-4C13 42 8 38 8 32z"/>
+                <circle cx="20" cy="31" r="6"/>
+                <circle cx="44" cy="31" r="6"/>
+                <circle cx="20" cy="31" r="1.6" fill="currentColor" stroke="none"/>
+                <circle cx="44" cy="31" r="1.6" fill="currentColor" stroke="none"/>
+                <path d="M26 16l4-4h4l4 4"/>
+              </svg>
+            </span>
             <img src="/assets/fyuri-cover.jpg" alt="FYURI screenshot"
-                 onerror="this.style.display='none';this.parentNode.classList.add('thumb-empty')" />
-            <span class="thumb-fallback">FYURI</span>
+                 onerror="this.style.display='none'" />
           </div>
           <div class="project-body">
             <h3>FYURI</h3>
@@ -129,8 +139,18 @@
 
         <!-- 3D Print Cost Calculator -->
         <article class="project-card">
-          <div class="project-thumb thumb-empty">
-            <span class="thumb-fallback">3D Print</span>
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- 3D printer -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="10" y="8" width="44" height="30" rx="2"/>
+                <path d="M10 30h44"/>
+                <path d="M24 16l8-4 8 4-8 4z"/>
+                <path d="M24 16v8l8 4 8-4v-8"/>
+                <path d="M32 20v8"/>
+                <path d="M16 44l6 12h20l6-12"/>
+              </svg>
+            </span>
           </div>
           <div class="project-body">
             <h3>3D Print Cost Calculator</h3>
@@ -150,8 +170,20 @@
 
         <!-- Face Detection -->
         <article class="project-card">
-          <div class="project-thumb thumb-empty">
-            <span class="thumb-fallback">Face</span>
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- Face with scanning bounding box -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 20V12a4 4 0 0 1 4-4h8"/>
+                <path d="M56 20V12a4 4 0 0 0-4-4h-8"/>
+                <path d="M8 44v8a4 4 0 0 0 4 4h8"/>
+                <path d="M56 44v8a4 4 0 0 1-4 4h-8"/>
+                <circle cx="26" cy="28" r="2" fill="currentColor" stroke="none"/>
+                <circle cx="38" cy="28" r="2" fill="currentColor" stroke="none"/>
+                <path d="M32 30v6"/>
+                <path d="M26 42c2 2 10 2 12 0"/>
+              </svg>
+            </span>
           </div>
           <div class="project-body">
             <h3>Face Detection</h3>
@@ -171,8 +203,16 @@
 
         <!-- Location Reminders -->
         <article class="project-card">
-          <div class="project-thumb thumb-empty">
-            <span class="thumb-fallback">GPS</span>
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- Map pin with bell -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 6c-9 0-16 7-16 16 0 12 16 30 16 30s16-18 16-30c0-9-7-16-16-16z"/>
+                <path d="M32 16c-4 0-7 3-7 7 0 3-1 5-2 6h18c-1-1-2-3-2-6 0-4-3-7-7-7z"/>
+                <path d="M30 38a2 2 0 0 0 4 0"/>
+                <path d="M32 13v3"/>
+              </svg>
+            </span>
           </div>
           <div class="project-body">
             <h3>Location Reminders</h3>
@@ -192,8 +232,18 @@
 
         <!-- Shopping List -->
         <article class="project-card">
-          <div class="project-thumb thumb-empty">
-            <span class="thumb-fallback">Shopping</span>
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- Checklist / clipboard -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="14" y="10" width="36" height="46" rx="3"/>
+                <path d="M24 10V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/>
+                <path d="M22 26l3 3 5-5"/>
+                <path d="M36 27h8"/>
+                <path d="M22 40l3 3 5-5"/>
+                <path d="M36 41h8"/>
+              </svg>
+            </span>
           </div>
           <div class="project-body">
             <h3>Shopping List</h3>
@@ -213,8 +263,20 @@
 
         <!-- Face Mesh Explorer -->
         <article class="project-card">
-          <div class="project-thumb thumb-empty">
-            <span class="thumb-fallback">Face Mesh</span>
+          <div class="project-thumb thumb-svg">
+            <span class="thumb-icon" aria-hidden="true">
+              <!-- Wireframe face mesh -->
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 6c-11 0-18 8-18 20 0 14 9 32 18 32s18-18 18-32c0-12-7-20-18-20z"/>
+                <path d="M32 6v52"/>
+                <path d="M16 24h32"/>
+                <path d="M18 38h28"/>
+                <path d="M22 50h20"/>
+                <path d="M32 6L18 24l4 14 10 12 10-12 4-14z"/>
+                <path d="M18 24l14 14 14-14"/>
+                <path d="M22 38l10-12 10 12"/>
+              </svg>
+            </span>
           </div>
           <div class="project-body">
             <h3>Face Mesh Explorer</h3>
