@@ -265,6 +265,18 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(1rem, 5vw, 2rem)
   border-radius: 999px;
   padding: 0.2rem 0.6rem;
 }
+.tags li.tag-accent {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.ai-note {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  border-inline-start: 3px solid var(--accent);
+  padding-inline-start: 0.9rem;
+}
 
 .project-links { display: flex; gap: 0.5rem; margin-top: auto; }
 

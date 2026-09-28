@@ -41,6 +41,8 @@ const translations = {
     'about.body':
       "I'm a full stack developer with a strong background in client care, service, and sales. After years of maximizing sales opportunities and solving problems for customers, I trained as a Full Stack Java developer and now build web applications end to end — from my own projects to freelance work for businesses.",
     'about.skillsTitle': 'Skills & technologies',
+    'about.ai':
+      'I work fluently with modern AI tools — using them daily to design, build, debug, and ship faster, and to accelerate learning new technologies.',
     'projects.title': 'Projects',
     'projects.fyuri.desc':
       'A full-stack e-commerce & custom-build platform for night-vision equipment. React + Vite front-end, ASP.NET Core (.NET 10) API, MySQL, admin panel with 2FA, 3D product builder, and email pipeline.',
@@ -54,6 +56,10 @@ const translations = {
       'A clean, simple shopping-list app for adding, checking off, and managing items on the go.',
     'projects.facemesh.desc':
       'Real-time facial-landmark mesh visualization rendered live from the camera feed.',
+    'projects.crm.desc':
+      'A full-stack CRM for sales teams — role-based access (agent / manager / admin), client assignment, activity tracking, approval workflows, audit logging, and bilingual EN/HE support.',
+    'projects.coupon.desc':
+      'A full-stack coupon-management platform — Spring Boot REST API with JWT auth and Swagger/OpenAPI docs, and a React + TypeScript SPA (MUI, Redux Toolkit), all containerized with Docker.',
     'projects.live': 'Live demo',
     'experience.title': 'Experience',
     'experience.freelance.role': 'Freelance Full Stack Developer',
@@ -94,6 +100,8 @@ const translations = {
     'about.body':
       'אני מפתח פוּל-סטאק עם רקע חזק בשירות לקוחות ומכירות. אחרי שנים של איתור הזדמנויות מכירה ופתרון בעיות ללקוחות, הוכשרתי כמפתח Full Stack Java והיום אני בונה אפליקציות ווב מהתחלה ועד הסוף — גם פרויקטים משלי וגם עבודות לעסקים.',
     'about.skillsTitle': 'כישורים וטכנולוגיות',
+    'about.ai':
+      'אני עובד בשוטף עם כלי בינה מלאכותית — משתמש בהם יום-יום כדי לתכנן, לפתח, לאתר תקלות ולהשק מהר יותר, וגם כדי ללמוד טכנולוגיות חדשות במהירות.',
     'projects.title': 'פרויקטים',
     'projects.fyuri.desc':
       'פלטפורמת מסחר אלקטרוני ובנייה מותאמת אישית לציוד ראיית לילה. פרונט-אנד ב-React + Vite, שרת ASP.NET Core (.NET 10), MySQL, פאנל ניהול עם אימות דו-שלבי, בונה מוצרים תלת-ממדי ומערכת דוא"ל.',
@@ -107,6 +115,10 @@ const translations = {
       'אפליקציית רשימת קניות נקייה ופשוטה להוספה, סימון וניהול פריטים בקלות.',
     'projects.facemesh.desc':
       'ויזואליזציה של רשת נקודות ציון בפנים בזמן אמת, המרונדרת חיה מהזנת המצלמה.',
+    'projects.crm.desc':
+      'מערכת CRM מלאה לצוותי מכירות — הרשאות לפי תפקיד (נציג / מנהל / אדמין), שיוך לקוחות, מעקב פעילות, תהליכי אישור, תיעוד פעולות ותמיכה דו-לשונית בעברית ובאנגלית.',
+    'projects.coupon.desc':
+      'פלטפורמה מלאה לניהול קופונים — שרת Spring Boot עם JWT ותיעוד Swagger, ואפליקציית React + TypeScript (MUI, Redux Toolkit), הכל ארוז ב-Docker.',
     'projects.live': 'הדגמה חיה',
     'experience.title': 'ניסיון',
     'experience.freelance.role': 'מפתח פול-סטאק עצמאי (פרילנס)',
