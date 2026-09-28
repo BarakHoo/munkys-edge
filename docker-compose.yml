@@ -28,6 +28,9 @@ services:
     image: caddy:latest
     container_name: munkys_caddy
     restart: unless-stopped
+    # --watch auto-reloads the config whenever the mounted Caddyfile changes,
+    # so route edits take effect without manually reloading/restarting Caddy.
+    command: ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--watch"]
     ports:
       - "80:80"
       - "443:443"
