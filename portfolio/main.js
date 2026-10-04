@@ -59,6 +59,7 @@ const translations = {
       'A full stack developer based in Herzliya. I build complete web applications end to end — from database and API design to polished, responsive front-ends — and take on freelance work for businesses.',
     'hero.ctaProjects': 'View my work',
     'hero.ctaCv': 'Download CV',
+    'hero.ctaCvHe': 'Download CV in Hebrew',
     'about.title': 'About',
     'about.body':
       "I'm a full stack developer with a strong background in client care, service, and sales. After years of maximizing sales opportunities and solving problems for customers, I trained as a Full Stack Java developer and now build web applications end to end — from my own projects to freelance work for businesses.",
@@ -119,6 +120,7 @@ const translations = {
       'מפתח פוּל-סטאק מהרצליה. אני בונה אפליקציות ווב שלמות מהתחלה ועד הסוף — מתכנון בסיס הנתונים וה-API ועד ממשקים נקיים ומותאמים לכל מסך — וגם לוקח פרויקטים לעסקים.',
     'hero.ctaProjects': 'לצפייה בעבודות שלי',
     'hero.ctaCv': 'הורדת קורות חיים',
+    'hero.ctaCvHe': 'הורדת קורות חיים בעברית',
     'about.title': 'אודות',
     'about.body':
       'אני מפתח פוּל-סטאק עם רקע חזק בשירות לקוחות ומכירות. אחרי שנים של איתור הזדמנויות מכירה ופתרון בעיות ללקוחות, הוכשרתי כמפתח Full Stack Java והיום אני בונה אפליקציות ווב מהתחלה ועד הסוף — גם פרויקטים משלי וגם עבודות לעסקים.',
