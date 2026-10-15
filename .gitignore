@@ -3,3 +3,5 @@ Thumbs.db
 *.log
 caddy_data/
 caddy_config/
+# airsoft site is a separate git checkout served by Caddy (see Caddyfile)
+portfolio/airsoft/
